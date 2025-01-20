@@ -42,7 +42,7 @@ const Home = () => {
     };
 
     return (
-        <div className="mx-auto bg-gradient-to-r from-gray-600 h-screen to-gray-900 p-10 ">
+        <div className="mx-auto h-full bg-gradient-to-r from-gray-600 to-gray-900 p-10 ">
             <div className="mt-10 max-w-md mx-auto text-center">
                 <p className="text-gray-200 border-2 shadow-lg shadow-gray-600 border-indigo-100 rounded-md my-2  py-2 font-sans font-bold text-3xl">
                     Post Office Finder.
