@@ -41,10 +41,16 @@ const Home = () => {
         }
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            DataFetching(); // Trigger search on pressing Enter
+        }
+    };
+
     return (
         <div className="mx-auto h-full bg-gradient-to-r from-gray-600 to-gray-900 p-10 ">
             <div className="mt-10 max-w-md mx-auto text-center">
-                <p className="text-gray-200 border-2 shadow-lg shadow-gray-600 border-indigo-100 rounded-md my-2  py-2 font-sans font-bold text-3xl">
+                <p className="text-gray-200 border-2 shadow-lg shadow-gray-600 border-indigo-100 rounded-md my-2 py-2 font-sans font-bold text-3xl">
                     Post Office Finder.
                 </p>
             </div>
@@ -52,11 +58,11 @@ const Home = () => {
             <div className="flex flex-col items-center justify-center">
                 <div className="w-full max-w-md py-8 overflow-hidden rounded-xl bg-white p-6 shadow-md">
                     <div className="flex overflow-hidden rounded-md bg-gray-200 focus-within:outline focus-within:outline-blue-500">
-
                         <input
                             type="text"
                             value={search}
                             onChange={handleInputChange}
+                            onKeyDown={handleKeyDown} // Added onKeyDown for "Enter" key
                             placeholder="Enter Your Postal Code..."
                             className="w-full placeholder:text-gray-500 rounded-bl-md rounded-tl-md bg-gray-100 px-4 py-1 text-gray-700 focus:outline-none"
                         />
@@ -92,7 +98,6 @@ const Home = () => {
                     <p className="text-gray-700  font-semibold">
                         Please type your postal code to begin searching.
                     </p>
-
                 </div>
             )}
 
@@ -105,13 +110,13 @@ const Home = () => {
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
-                                stroke-width="1.5"
+                                strokeWidth="1.5"
                                 stroke="currentColor"
                                 className="w-16 h-16 text-red-800"
                             >
                                 <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                     d="M10.34 3.705a9 9 0 0 1 13.95 9.788 9 9 0 0 1-9.788 13.95 9 9 0 0 1-9.787-13.95 9 9 0 0 1 5.625-9.788l1.474 2.599z"
                                 />
                             </svg>
@@ -120,7 +125,6 @@ const Home = () => {
                         <p className="text-gray-200 mt-2">
                             We couldn’t find any data for the entered postal code. Please check the postal code and try again.
                         </p>
-
                     </div>
                 </div>
             )}
